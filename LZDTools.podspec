@@ -19,7 +19,8 @@ Pod::Spec.new do |s|
 
   s.description      = <<-DESC
 增加一些其他的扩展e和常用的工具,
-添加网络工具                       DESC
+添加网络工具
+DESC
 
   s.homepage         = 'https://github.com/511815816@qq.com/LZDTools'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
