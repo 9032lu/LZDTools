@@ -57,6 +57,10 @@ static AFHTTPSessionManager *manager ;
         manager.responseSerializer = [AFJSONResponseSerializer serializer];
         manager.requestSerializer = [AFHTTPRequestSerializer serializer];
         
+            AFSecurityPolicy *securityPolicy = [[AFSecurityPolicy alloc] init];
+           [securityPolicy setAllowInvalidCertificates:YES];
+           [manager setSecurityPolicy:securityPolicy];
+        
         /* 请求队列最大并发数 */
         manager.operationQueue.maxConcurrentOperationCount = 5;
         /* 请求超时的时间 */

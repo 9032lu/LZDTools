@@ -14,15 +14,15 @@
 @implementation UINavigationController (Cloudox)
 
 // 设置导航栏背景透明度
-- (void)setNeedsNavigationBackground:(CGFloat)alpha{
+- (void)setNeedsNavigationBackground:(CGFloat)alpha {
     // 导航栏背景透明度设置
     if (self.navigationBar.subviews.count==0) {
         return;
     }
     UIView *barBackgroundView = [[self.navigationBar subviews] objectAtIndex:0];// _UIBarBackground
-    UIImageView *backgroundImageView = [[barBackgroundView subviews] objectAtIndex:0];// UIImageView
+    UIView *barBackgroundShadowView = [[barBackgroundView subviews] objectAtIndex:0];// UIImageView
     if (self.navigationBar.isTranslucent) {
-        if (backgroundImageView != nil && backgroundImageView.image != nil) {
+        if (barBackgroundShadowView != nil) {
             barBackgroundView.alpha = alpha;
         } else {
             UIView *backgroundEffectView = [[barBackgroundView subviews] objectAtIndex:1];// UIVisualEffectView
@@ -37,7 +37,49 @@
     // 对导航栏下面那条线做处理
     self.navigationBar.clipsToBounds = alpha == 0.0;
 }
-
+//// 设置导航栏背景透明度
+//- (void)setNeedsNavigationBackground:(CGFloat)alpha {
+//    // 导航栏背景透明度设置
+//    if (self.navigationBar.subviews.count==0) {
+//           return;
+//       }
+//    UIView *barBackgroundView = [[self.navigationBar subviews] objectAtIndex:0];//
+//    if (@available(ios 11,*)) {
+//
+//        [self getSub:barBackgroundView andLevel:1 andAlpha:alpha];
+//        
+//
+//    }else{
+//        barBackgroundView.alpha = alpha;
+//
+//    }
+//    
+//    
+//
+//    // 对导航栏下面那条线做处理
+//    self.navigationBar.clipsToBounds = alpha == 0.0;
+//}
+//
+//-(void)getSub:(UIView*)view andLevel:(int)level andAlpha:(NSInteger)alpha{
+//    
+//    NSArray *subViews = [view subviews];
+//    if ([subViews count]==0) return;
+//    
+//    for (UIView *subView in subViews) {
+//        subView.alpha = alpha;
+////
+////        NSString *blank = @"";
+////        for (int i = 1; i < level; i++) {
+////            blank = [NSString stringWithFormat:@"  %@", blank];
+////        }
+////        NSLog(@"%@%d: %@", blank, level, subView.class);
+//
+//        
+//        [self getSub:subView andLevel:(level+1) andAlpha:alpha];
+//    }
+//        
+//    
+//}
 + (void)initialize {
     if (self == [UINavigationController self]) {
         // 交换方法
@@ -66,16 +108,15 @@
     }
 }
 
-
 #pragma mark - UINavigationController Delegate
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
     UIViewController *topVC = self.topViewController;
     if (topVC != nil) {
         id<UIViewControllerTransitionCoordinator> coor = topVC.transitionCoordinator;
         if (coor != nil) {
-            //            [coor notifyWhenInteractionChangesUsingBlock:^(id<UIViewControllerTransitionCoordinatorContext> context){
-            //                [self dealInteractionChanges:context];
-            //            }];
+//            [coor notifyWhenInteractionChangesUsingBlock:^(id<UIViewControllerTransitionCoordinatorContext> context){
+//                [self dealInteractionChanges:context];
+//            }];
             
             // notifyWhenInteractionChangesUsingBlock是10.0以后的api，换成notifyWhenInteractionEndsUsingBlock
 #pragma clang diagnostic push
@@ -113,7 +154,7 @@
     if (self.viewControllers.count >= navigationBar.items.count) {// 点击返回按钮
         UIViewController *popToVC = self.viewControllers[self.viewControllers.count - 1];
         [self setNeedsNavigationBackground:[popToVC.navBarBgAlpha floatValue]];
-        //        [self popViewControllerAnimated:YES];
+//        [self popViewControllerAnimated:YES];
     }
 }
 
@@ -151,3 +192,4 @@ static char *CloudoxKey = "CloudoxKey";
 }
 
 @end
+
