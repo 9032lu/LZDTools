@@ -14,12 +14,12 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - LZDTools (0.0.1):
-    - LZDTools/Catagory (= 0.0.1)
-    - LZDTools/LZDLoopView (= 0.0.1)
-  - LZDTools/Catagory (0.0.1):
+  - LZDTools (0.0.2):
+    - LZDTools/Catagory (= 0.0.2)
+    - LZDTools/LZDLoopView (= 0.0.2)
+  - LZDTools/Catagory (0.0.2):
     - AFNetworking (~> 3.2.1)
-  - LZDTools/LZDLoopView (0.0.1)
+  - LZDTools/LZDLoopView (0.0.2)
 
 DEPENDENCIES:
   - LZDTools (from `../`)
@@ -34,7 +34,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  LZDTools: 936a4f2670e58886e98c13b5f0d50755c546ecb6
+  LZDTools: 03c547603b94cdc1403f34acc6c7be7cd3fbc711
 
 PODFILE CHECKSUM: 67719a4c33ebc92285f563d7c1d739f2c709614a
 

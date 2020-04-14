@@ -1,6 +1,6 @@
 {
   "name": "LZDTools",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "summary": "LZDTools.",
   "description": "增加一些其他的扩展e和常用的工具,\n添加网络工具",
   "homepage": "https://github.com/511815816@qq.com/LZDTools",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/9032lu/LZDTools.git",
-    "tag": "0.0.1"
+    "tag": "0.0.2"
   },
   "platforms": {
     "ios": "8.0"
