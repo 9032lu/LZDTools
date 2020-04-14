@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LZDTools'
-  s.version          = '0.0.6'
+  s.version          = '0.0.7'
   s.summary          = 'LZDTools.'
 
 # This description is used to generate tags and improve search results.
@@ -53,7 +53,7 @@ DESC
    end
    
    s.subspec 'Encryptions' do |en|
-       lp.source_files = 'LZDTools/Classes/Encryptions/*'
+       en.source_files = 'LZDTools/Classes/Encryptions/*'
    end
   
 end
