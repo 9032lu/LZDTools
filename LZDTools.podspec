@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LZDTools'
-  s.version          = '0.0.7'
+  s.version          = '0.0.8'
   s.summary          = 'LZDTools.'
 
 # This description is used to generate tags and improve search results.
@@ -31,7 +31,7 @@ DESC
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'LZDTools/Classes/**/*'
+#  s.source_files = 'LZDTools/Classes/**/*'
   
   # s.resource_bundles = {
   #   'LZDTools' => ['LZDTools/Assets/*.png']
