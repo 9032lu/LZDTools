@@ -11,7 +11,7 @@
 #import "UIImage+UIImage_color.h"
 #import "LZDViewController.h"
 #import "LZDNextViewController.h"
-
+#import "NSString+Hash.h"
 #define SCREENWIDTH       [UIScreen mainScreen].bounds.size.width
 #define SCREENHEIGHT      [UIScreen mainScreen].bounds.size.height
 
@@ -20,7 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     NSString *string = @"isjdlf@qq.com";
-    NSLog(@"%@ ==%d",string,[string isValidEmail]);
+    NSLog(@"%@ ==%d====%@",string,[string isValidEmail],[string sha1Hash]);
 
     LZDViewController *vc1 = [[LZDViewController alloc] init];
     UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:vc1];
