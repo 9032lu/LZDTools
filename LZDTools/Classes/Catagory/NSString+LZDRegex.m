@@ -833,4 +833,47 @@
     
     return deviceString;
 }
+
+
+
+
+/// 拨打电话
+/// @param phone 电话号码
++(void)CallPhone:(NSString*)phone
+{
+    NSMutableString *str=[[NSMutableString alloc] initWithFormat:@"telprompt://%@",phone];
+
+        if (@available(iOS 10.0, *)) {
+            [[UIApplication sharedApplication]openURL:[NSURL URLWithString:str] options:@{UIApplicationOpenURLOptionsSourceApplicationKey:@YES} completionHandler:nil];
+        } else {
+            
+            [[UIApplication sharedApplication]openURL:[NSURL URLWithString:str]];
+
+        }
+   
+    
+}
+
+
+
+/// 文字前面添加文件图标
+/// @param string <#string description#>
++(NSMutableAttributedString*)attachFileImg:(NSString*)imageName MutableStringFromString:(NSString*)string;
+{
+    NSMutableAttributedString *muta_Attr = [[NSMutableAttributedString alloc]initWithString:string];
+      NSTextAttachment *attch = [[NSTextAttachment alloc]init];
+      attch.image = [UIImage imageNamed:imageName];
+      attch.bounds = CGRectMake(0, 0, 11, 10);
+
+    [muta_Attr setAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithRed:32 green:148 blue:222 alpha:1]} range:NSMakeRange(0, string.length)];
+    
+      NSAttributedString *atring = [NSAttributedString attributedStringWithAttachment:attch];
+      //            [muta_Attr appendAttributedString:atring];
+      [muta_Attr insertAttributedString:atring atIndex:0];
+    
+    
+    return muta_Attr;
+}
+
+
 @end

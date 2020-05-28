@@ -268,6 +268,15 @@ NS_ASSUME_NONNULL_BEGIN
  @return 手机名称
  */
 +(NSString *)getDeviceName;
+
+/// 拨打电话
+/// @param phone 电话号码
++(void)CallPhone:(NSString*)phone;
+
+
+/// 文字前面添加文件图标
+/// @param string <#string description#>
++(NSMutableAttributedString*)attachFileImg:(NSString*)imageName MutableStringFromString:(NSString*)string;
 @end
 
 NS_ASSUME_NONNULL_END

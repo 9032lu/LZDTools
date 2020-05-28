@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LZDTools'
-  s.version          = '0.0.8'
+  s.version          = '0.0.9'
   s.summary          = 'LZDTools.'
 
 # This description is used to generate tags and improve search results.
@@ -19,7 +19,6 @@ Pod::Spec.new do |s|
 
   s.description      = <<-DESC
 增加一些其他的扩展e和常用的工具,
-添加网络工具
 DESC
 
   s.homepage         = 'https://github.com/511815816@qq.com/LZDTools'
@@ -39,12 +38,11 @@ DESC
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  # s.dependency 'AFNetworking', '~> 2.3'---3.2.1
   
   s.subspec 'Catagory' do |ca|
        ca.source_files = 'LZDTools/Classes/Catagory/*'
        ca.public_header_files = 'LZDTools/Classes/Catagory/*.h'
-       ca.dependency 'AFNetworking', '~> 3.2.1'
 
    end
    
