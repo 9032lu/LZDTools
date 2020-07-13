@@ -5,6 +5,14 @@
 //  Created by senba on 2017/10/10.
 //  Copyright © 2017年 CoderMikeHe. All rights reserved.
 //
+#define TenderDocuments  @"招标文件夹"
+
+#define MHDocumentDirectory [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES) lastObject]
+
+static inline NSString *LZDDocDirPath(){
+    return [MHDocumentDirectory stringByAppendingPathComponent:TenderDocuments];
+}
+
 
 #import "MHFileManager.h"
 
