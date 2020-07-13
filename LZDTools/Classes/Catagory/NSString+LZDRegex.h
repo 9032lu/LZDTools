@@ -277,6 +277,17 @@ NS_ASSUME_NONNULL_BEGIN
 /// 文字前面添加文件图标
 /// @param string <#string description#>
 +(NSMutableAttributedString*)attachFileImg:(NSString*)imageName MutableStringFromString:(NSString*)string;
+
+
+/// 保留小数位数
+/// @param price 要处理的数
+/// @param position 小数点第几位
++(NSString *)notRounding:(id)price
+              afterPoint:(NSInteger)position;
+
+///去掉标签
++(NSString *)removeTheHtmlFromString:(NSString *)htmlString;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -876,4 +876,36 @@
 }
 
 
+/// 保留小数位数
+/// @param price 要处理的数
+/// @param position 小数点第几位
++ (NSString *)notRounding:(id)price
+               afterPoint:(NSInteger)position {
+    //生成format格式
+    NSString *format = [NSString stringWithFormat:@"%%.%ldf",(long)position];
+    CGFloat value = 0.;
+    //string 和 number 兼容
+    if ([price respondsToSelector:@selector(doubleValue)]) {
+        value = [price doubleValue];
+    }
+    NSString *number = [NSString stringWithFormat:format,value];
+    return number;
+}
+
+///去掉标签
++(NSString *)removeTheHtmlFromString:(NSString *)htmlString{
+    NSScanner * scanner = [NSScanner scannerWithString:htmlString];
+    NSString * text = nil;
+    while([scanner isAtEnd]==NO) {
+        //找到标签的起始位置
+        [scanner scanUpToString:@"<" intoString:nil];
+        //找到标签的结束位置
+        [scanner scanUpToString:@">" intoString:&text];
+        //替换字符
+        htmlString = [htmlString stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"%@>",text] withString:@""];
+    }
+    return htmlString;
+}
+
+
 @end

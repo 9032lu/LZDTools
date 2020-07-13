@@ -1,41 +1,24 @@
 PODS:
-  - AFNetworking (3.2.1):
-    - AFNetworking/NSURLSession (= 3.2.1)
-    - AFNetworking/Reachability (= 3.2.1)
-    - AFNetworking/Security (= 3.2.1)
-    - AFNetworking/Serialization (= 3.2.1)
-    - AFNetworking/UIKit (= 3.2.1)
-  - AFNetworking/NSURLSession (3.2.1):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.2.1)
-  - AFNetworking/Security (3.2.1)
-  - AFNetworking/Serialization (3.2.1)
-  - AFNetworking/UIKit (3.2.1):
-    - AFNetworking/NSURLSession
-  - LZDTools (0.0.2):
-    - LZDTools/Catagory (= 0.0.2)
-    - LZDTools/LZDLoopView (= 0.0.2)
-  - LZDTools/Catagory (0.0.2):
-    - AFNetworking (~> 3.2.1)
-  - LZDTools/LZDLoopView (0.0.2)
+  - LZDTools (0.1.0):
+    - LZDTools/Catagory (= 0.1.0)
+    - LZDTools/Encryptions (= 0.1.0)
+    - LZDTools/LZDLoopView (= 0.1.0)
+    - LZDTools/PlaceholderTextView (= 0.1.0)
+  - LZDTools/Catagory (0.1.0)
+  - LZDTools/Encryptions (0.1.0)
+  - LZDTools/LZDLoopView (0.1.0)
+  - LZDTools/PlaceholderTextView (0.1.0)
 
 DEPENDENCIES:
   - LZDTools (from `../`)
-
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - AFNetworking
 
 EXTERNAL SOURCES:
   LZDTools:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  LZDTools: 03c547603b94cdc1403f34acc6c7be7cd3fbc711
+  LZDTools: ce289fd3123160b9cda1994ef593720d1f673b7c
 
 PODFILE CHECKSUM: 67719a4c33ebc92285f563d7c1d739f2c709614a
 
-COCOAPODS: 1.7.2
+COCOAPODS: 1.9.2
